@@ -1,5 +1,14 @@
 <h1>Task: <%= @task.title %></h1>
 
-<p><%= @task.details %></p>
+<div class="card my-3 bg-light">
+  <div class="card-body">
+    <%= @task.details %>
+  </div>
+</div>
 
-<p>This task is done: <%= @task.completed %></p>
+<p class="my-3"><%= @task.completed ?
+      '<i class="fa-regular fa-square-check"></i> This task is completed'.html_safe
+      :
+      '<i class="fa-regular fa-square"></i> This task is not completed yet'.html_safe %></p>
+
+<%= render 'back_to_list' %>
