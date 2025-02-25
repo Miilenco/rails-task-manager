@@ -1,13 +1,19 @@
 <h1>Edit task</h1>
 
-<%= form_with model: @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_area :details %>
-  <%= f.label :completed do %>
-    <%= f.check_box :completed %>
-    Completed
-  <% end %>
-  <%= f.submit %>
+<%= form_with model: @task, class: "my-3" do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :details, class: "form-label" %>
+    <%= f.text_area :details, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :completed do %>
+      <%= f.check_box :completed %>
+      Completed
+    <% end %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
